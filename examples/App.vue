@@ -1,5 +1,6 @@
 <template>
   <slb-button @click="test">311</slb-button>
+  <slb-box></slb-box>
 </template>
 
 <script>

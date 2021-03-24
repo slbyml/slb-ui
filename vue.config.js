@@ -1,5 +1,4 @@
 const path = require('path')
-const NODE_ENV = 'development'
 const components = require('./compontents.json');
 
 const baseConfig = {
@@ -28,7 +27,7 @@ const baseConfig = {
     loaderOptions: {
       // 给 sass-loader 传递选项
       sass: {
-        data: `@import "packages/style/var.scss";`
+        additionalData: `@import "~/style/var.scss";`
       }
     },
   }
@@ -52,12 +51,11 @@ const buildConfig = {
     entry: components,
     output: {
       filename: '[name].js',
-      libraryTarget: 'commonjs2',
+      // libraryTarget: 'commonjs2'
     },
   },
-  outputDir: 'lib',
+  outputDir: path.resolve(process.cwd(), './lib'),
   productionSourceMap: false,
-  ...baseConfig
-
+  ...baseConfig,
 }
-module.exports = NODE_ENV === 'development' ? devConfig : buildConfig;
+module.exports = process.env.NODE_ENV === 'development' ? devConfig : buildConfig;

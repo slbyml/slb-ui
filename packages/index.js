@@ -1,7 +1,9 @@
 import slbButton from './button'
+import slbBox from './box'
 
 const components = [
-  slbButton
+  slbButton,
+  slbBox
 ]
 
 const install = function (Vue) {
@@ -18,5 +20,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   // 组件
-  slbButton
+  slbButton,
+  slbBox
 }
