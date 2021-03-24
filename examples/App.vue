@@ -1,15 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <slb-button @click="test">311</slb-button>
 </template>
 
 <script>
-import HelloWorld from '../src/components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const test = () => {
+      console.log('213');
+    }
+    return {
+      test
+    }
   }
 }
 </script>

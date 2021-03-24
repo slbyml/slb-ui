@@ -1,5 +1,6 @@
 const path = require('path')
-const components = require('./build/compontents.json');
+const NODE_ENV = 'development'
+const components = require('./compontents.json');
 
 const baseConfig = {
   // 扩展 webpack 配置
